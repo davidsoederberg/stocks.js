@@ -153,10 +153,10 @@ Stocks.prototype = {
       fetch(url).then(function (response) {
         return response.json();
       }).then(function (data) {
-        if (typeof data['Error Message'] !== 'undefined') {
+       /* if (typeof data['Error Message'] !== 'undefined') {
           this._throw(9, 'error');
         }
-
+      */
         resolve(data);
       });
     });
