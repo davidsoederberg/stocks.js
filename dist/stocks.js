@@ -154,7 +154,7 @@ Stocks.prototype = {
         return response.json();
       }).then(function (data) {
        if (typeof data['Error Message'] !== 'undefined') {
-          reject(`No stock found with ticker ${params.symbol}`)
+          reject(`Error`)
         }
 
         resolve(data);
