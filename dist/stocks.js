@@ -154,9 +154,8 @@ Stocks.prototype = {
         return response.json();
       }).then(function (data) {
        if (typeof data['Error Message'] !== 'undefined') {
-          reject(`Error`)
+          reject(`No hit with your query`)
         }
-
         resolve(data);
       });
     });
