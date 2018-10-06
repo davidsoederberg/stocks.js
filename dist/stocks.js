@@ -148,15 +148,15 @@ Stocks.prototype = {
     }
 
     return new Promise((resolve, reject) => {
-      var url = this._createUrl(params);
+      const url = this._createUrl(params);
 
       fetch(url).then(function (response) {
         return response.json();
       }).then(function (data) {
-       /* if (typeof data['Error Message'] !== 'undefined') {
-          this._throw(9, 'error');
+       if (typeof data['Error Message'] !== 'undefined') {
+          reject(`No stock found with ticker ${params.symbol}`)
         }
-      */
+
         resolve(data);
       });
     });
